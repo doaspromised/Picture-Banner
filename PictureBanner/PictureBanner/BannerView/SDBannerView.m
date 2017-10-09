@@ -16,6 +16,8 @@ NSString *const SDBannerViewCellID = @"SDBannerViewCellID";
 @end
 @implementation SDBannerView {
     NSArray <NSURL *> *_urls;
+    //轮播页数
+    CGFloat _page;
 }
 
 - (instancetype)initWithURLs:(NSArray <NSURL *> *)urls {
@@ -30,9 +32,28 @@ NSString *const SDBannerViewCellID = @"SDBannerViewCellID";
         dispatch_async(dispatch_get_main_queue(), ^{
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_urls.count inSection:0];
             [self scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+            _page = _urls.count;
         });
+        
+        //添加定时器
+        NSTimer *timer = [NSTimer timerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            [self bannerWithTimer:timer];
+        }];
+        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
     }
     return self;
+}
+
+- (void)bannerWithTimer:(NSTimer *)timer{
+    _page ++;
+    if (_page == 0) {
+        _page = _urls.count;
+    }
+    if (_page == 5) {
+        _page = _urls.count - 1;
+    }
+    self.contentOffset = CGPointMake(_page * self.bounds.size.width, 0);
+    
 }
 #pragma mark - UICollectionViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
