@@ -12,17 +12,24 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    NSArray <NSURL *> *_urls;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self loadData];
+    NSLog(@"%@",_urls);
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)loadData{
+    NSMutableArray *arrM = [NSMutableArray array];
+    for (NSInteger i = 0; i < 3; i++) {
+        NSString *fileName = [NSString stringWithFormat:@"%02zd.jpg",(i + 1)];
+        NSURL *url = [[NSBundle mainBundle] URLForResource:fileName withExtension:nil];
+        [arrM addObject:url];
+    }
+    _urls = arrM.copy;
 }
 
 
