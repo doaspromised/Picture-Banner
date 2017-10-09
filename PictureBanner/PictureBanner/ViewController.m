@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "SDBannerView.h"
 @interface ViewController ()
 
 @end
@@ -18,7 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 加载数据
     [self loadData];
+    
+    //创建界面
+    SDBannerView *bannerView = [[SDBannerView alloc] initWithURLs:_urls];
+    bannerView.frame = CGRectMake(20, 20, self.view.bounds.size.width - 40, 100);
+    [self.view addSubview:bannerView];
     NSLog(@"%@",_urls);
 }
 
