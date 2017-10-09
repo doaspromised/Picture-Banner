@@ -23,7 +23,7 @@
     
     //创建界面
     SDBannerView *bannerView = [[SDBannerView alloc] initWithURLs:_urls];
-    bannerView.frame = CGRectMake(20, 20, self.view.bounds.size.width - 40, 100);
+    bannerView.frame = CGRectMake(20, 20, self.view.bounds.size.width - 40, 350);
     [self.view addSubview:bannerView];
     NSLog(@"%@",_urls);
 }

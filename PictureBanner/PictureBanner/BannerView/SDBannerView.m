@@ -7,7 +7,8 @@
 //
 
 #import "SDBannerView.h"
-
+#import "SDBannerViewFlowLayout.h"
+#import "SDBannerViewCell.h"
 NSString *const SDBannerViewCellID = @"SDBannerViewCellID";
 
 @interface SDBannerView() <UICollectionViewDataSource>
@@ -18,11 +19,11 @@ NSString *const SDBannerViewCellID = @"SDBannerViewCellID";
 }
 
 - (instancetype)initWithURLs:(NSArray <NSURL *> *)urls {
-    self = [super initWithFrame:CGRectZero collectionViewLayout:[UICollectionViewFlowLayout new]];
+    self = [super initWithFrame:CGRectZero collectionViewLayout:[SDBannerViewFlowLayout new]];
     if (self) {
         _urls = urls;
         self.dataSource = self;
-        [self registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:SDBannerViewCellID];
+        [self registerClass:[SDBannerViewCell class] forCellWithReuseIdentifier:SDBannerViewCellID];
     }
     return self;
 }
@@ -33,8 +34,9 @@ NSString *const SDBannerViewCellID = @"SDBannerViewCellID";
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SDBannerViewCellID forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
+    SDBannerViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SDBannerViewCellID forIndexPath:indexPath];
+//    cell.backgroundColor = [UIColor redColor];
+    cell.url = _urls[indexPath.item];
     return cell;
 }
 @end

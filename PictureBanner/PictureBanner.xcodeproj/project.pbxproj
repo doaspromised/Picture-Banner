@@ -17,6 +17,8 @@
 		07F2DD2A1F8B2D5600B6FD44 /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07F2DD271F8B2D5500B6FD44 /* 02.jpg */; };
 		07F2DD2B1F8B2D5600B6FD44 /* 03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07F2DD281F8B2D5500B6FD44 /* 03.jpg */; };
 		07F2DD2F1F8B317A00B6FD44 /* SDBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F2DD2E1F8B317A00B6FD44 /* SDBannerView.m */; };
+		07F2DD321F8B3CB500B6FD44 /* SDBannerViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F2DD311F8B3CB500B6FD44 /* SDBannerViewFlowLayout.m */; };
+		07F2DD351F8B3D8A00B6FD44 /* SDBannerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F2DD341F8B3D8A00B6FD44 /* SDBannerViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,10 @@
 		07F2DD281F8B2D5500B6FD44 /* 03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03.jpg; sourceTree = "<group>"; };
 		07F2DD2D1F8B317A00B6FD44 /* SDBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDBannerView.h; sourceTree = "<group>"; };
 		07F2DD2E1F8B317A00B6FD44 /* SDBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDBannerView.m; sourceTree = "<group>"; };
+		07F2DD301F8B3CB500B6FD44 /* SDBannerViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDBannerViewFlowLayout.h; sourceTree = "<group>"; };
+		07F2DD311F8B3CB500B6FD44 /* SDBannerViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDBannerViewFlowLayout.m; sourceTree = "<group>"; };
+		07F2DD331F8B3D8A00B6FD44 /* SDBannerViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDBannerViewCell.h; sourceTree = "<group>"; };
+		07F2DD341F8B3D8A00B6FD44 /* SDBannerViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDBannerViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,10 @@
 			children = (
 				07F2DD2D1F8B317A00B6FD44 /* SDBannerView.h */,
 				07F2DD2E1F8B317A00B6FD44 /* SDBannerView.m */,
+				07F2DD301F8B3CB500B6FD44 /* SDBannerViewFlowLayout.h */,
+				07F2DD311F8B3CB500B6FD44 /* SDBannerViewFlowLayout.m */,
+				07F2DD331F8B3D8A00B6FD44 /* SDBannerViewCell.h */,
+				07F2DD341F8B3D8A00B6FD44 /* SDBannerViewCell.m */,
 			);
 			path = BannerView;
 			sourceTree = "<group>";
@@ -176,10 +186,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F2DD321F8B3CB500B6FD44 /* SDBannerViewFlowLayout.m in Sources */,
 				07F2DCEC1F8B20F900B6FD44 /* ViewController.m in Sources */,
 				07F2DD2F1F8B317A00B6FD44 /* SDBannerView.m in Sources */,
 				07F2DCF71F8B20F900B6FD44 /* main.m in Sources */,
 				07F2DCE91F8B20F900B6FD44 /* AppDelegate.m in Sources */,
+				07F2DD351F8B3D8A00B6FD44 /* SDBannerViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
