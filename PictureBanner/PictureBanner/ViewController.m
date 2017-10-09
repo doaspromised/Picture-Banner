@@ -24,10 +24,11 @@
 
 - (void)loadData{
     NSMutableArray *arrM = [NSMutableArray array];
-    for (NSInteger i = 0; i < 3; i++) {
-        NSString *fileName = [NSString stringWithFormat:@"%02zd.jpg",(i + 1)];
-        NSURL *url = [[NSBundle mainBundle] URLForResource:fileName withExtension:nil];
-        [arrM addObject:url];
+    for (int i = 0; i < 3; i++) {
+        NSString *fileName = [NSString stringWithFormat:@"%02zd.jpg", (i + 1)];
+        NSLog(@"文件名%@",fileName);
+        NSURL *imgURL = [[NSBundle mainBundle] URLForResource:fileName withExtension:nil];
+        [arrM addObject:imgURL];
     }
     _urls = arrM.copy;
 }
