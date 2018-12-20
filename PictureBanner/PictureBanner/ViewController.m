@@ -20,10 +20,9 @@
     [super viewDidLoad];
     // 加载数据
     [self loadData];
-    
     //创建界面
     SDBannerView *bannerView = [[SDBannerView alloc] initWithURLs:_urls];
-    bannerView.frame = CGRectMake(20, 20, self.view.bounds.size.width - 40, 350);
+    bannerView.frame = CGRectMake(0, 88, self.view.bounds.size.width, 350);
     [self.view addSubview:bannerView];
     NSLog(@"%@",_urls);
 }
@@ -31,7 +30,7 @@
 - (void)loadData{
     NSMutableArray *arrM = [NSMutableArray array];
     for (int i = 0; i < 3; i++) {
-        NSString *fileName = [NSString stringWithFormat:@"%02zd.jpg", (i + 1)];
+        NSString *fileName = [NSString stringWithFormat:@"%02d.jpg", (i + 1)];
         NSLog(@"文件名%@",fileName);
         NSURL *imgURL = [[NSBundle mainBundle] URLForResource:fileName withExtension:nil];
         [arrM addObject:imgURL];
